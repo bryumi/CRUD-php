@@ -1,3 +1,10 @@
+<?php
+include 'dao/GENERO.php';
+// buscando os tipos de cooperativas cadastradas no banco de dados
+$gen = new Genero_DAO();
+$arr_gen = $gen->findAll();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
 
-        include ('styles.php');
+    include('styles.php');
 
     ?>
     <title>Home</title>
@@ -26,28 +33,18 @@
 
                 <div class="name">
                     <label for="name">Nome da Série:</label>
-                    <input type="text" name="name" placeholder="Stranger Things">
+                    <input type="text" name="nomeSerie" placeholder="Stranger Things">
 
                 </div>
                 <div class="genero">
                     <label for="genero">Gênero da série: </label>
                     <select name="genero">
                         <option value="none" selected disabled hidden>Selecione um gênero</option>
-                        <option value="acao">Ação</option>
-                        <option value="animacao">Animacao</option>
-                        <option value="aventura">Aventura</option>
-                        <option value="comedia">Comédia</option>
-                        <option value="crime">Crime</option>
-                        <option value="documentario">Documentário</option>
-                        <option value="drama">Drama</option>
-                        <option value="esportes">Esportes</option>
-                        <option value="fantasia">Fantasia</option>
-                        <option value="ficcaoCientifica">Ficção Científica</option>
-                        <option value="historicas">Históricas</option>
-                        <option value="musicais">Musicais</option>
-                        <option value="policiais">Policiais</option>
-                        <option value="romance">Romance</option>
-                        <option value="terror">Terror</option>
+                        <?php
+                        foreach ($arr_gen as $objGen) {
+                            echo "<option value='" . $objGen->getIdGenero() . "'>" . $objGen->getNomeGenero() . "</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="anoIni">
