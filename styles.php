@@ -1,6 +1,7 @@
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 
 *{
     margin: 0;
@@ -10,6 +11,46 @@
 html{
     background-image: linear-gradient(to bottom,#ffb9ba, #f3dfb6);
     background-attachment: fixed;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    z-index: 9999999;
+    /* background-image: linear-gradient(to bottom,#ffb9ba, #f3dfb6); */
+    background-color: linear-gradient(to bottom,#ffb9ba, #f3dfb6);
+
+    box-shadow: 0px 7px 9px 0px #72717161;
+
+    height: 10vh;
+
+    font-family: 'Cherry Bomb One', cursive;
+
+    position: static;
+    top: 0;
+}
+header nav ul {
+    display: flex;
+    gap: 4.75rem;
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    margin-right: 30px;     
+}
+header nav a {
+    text-decoration: none;
+    color: #fff;
+
+    font-weight: 400;
+    font-size: 2rem;
+    
+    
+}
+header nav a:hover{
+    color: #F952EB;
+    transition: 0.9ms;
 }
 
 main{
@@ -27,6 +68,7 @@ h1{
     font-family: 'Sigmar', cursive;
     color: #9615b9;
     filter: drop-shadow(5px 5px 4px #85848470);
+    z-index: 1;
 
 }
 
@@ -36,7 +78,7 @@ form input {
     border-radius: 20px;
     font-family: 'Quicksand', sans-serif;
     height: 4vh;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 div.form-auth {
@@ -120,15 +162,15 @@ form .sinopse {
 }
 
 form .sinopse textarea{
-        background-size: 100% 4rem;
+        /* background-size: 100% 4rem; */
         border: 1px solid #CCC;
         width: 20rem;
         height: 5rem;
-        line-height: 2rem;
+        line-height: 1rem;
         margin: 0 auto;
-        padding: 4px 8px;
+        padding: 0.25rem;
         font-family: inherit;
-        font-size: inherit;
+        font-size: small;
 } 
 
 
@@ -187,5 +229,28 @@ form div.sign-in button.submit-button {
         color: red;
         margin-top: 0;
         text-align: initial;
+    }
+
+    .excluir {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .excluir div {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        width: max-content;
+        height: max-content;
+        background-color: #A75CF2;
+        border-radius: 8px;
+        transition: 0.2s;
+    }
+    .excluir div:hover{
+        background-color: #ffb9ba;
+    }
+    .excluir a{
+        text-decoration: none;
+        color: #fff;
+        padding: 0.25rem;
     }
     </style>

@@ -1,5 +1,5 @@
 <?php
-    require_once('./genero.php');
+    require_once('genero.php');
     class serie{
             private $nomeSerie;
             private $id;
@@ -12,7 +12,19 @@
             private $id_genero;
 
             public function __construct(){
-                $this-> id_genero= new genero();
+                $this-> id_genero = new genero();
+            }
+            public function setSerieIdGen($id_genero){
+                $this->id_genero = $id_genero;
+            }
+            public function getSerieIdGen(){
+                return $this -> id_genero;
+            }
+            public function getIdGen(){
+                return $this->id_genero->getIdGenero();
+            }
+            public function getSerieNomeGen(){
+                return $this ->id_genero->getNomeGenero();
             }
             
             public function getNome(){
@@ -38,6 +50,9 @@
             }
             public function getNota(){
                 return $this-> nota;
+            }
+            public function setId($id){
+                $this->id= $id;
             }
             public function setNome($nomeSerie){
                 $this->nomeSerie = $nomeSerie;
